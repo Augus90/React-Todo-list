@@ -1,0 +1,27 @@
+li{
+    margin: 10px;
+    padding: 8px;
+    background-color: cadetblue;
+    border: 3px solid black;
+    border-radius: 12px;
+    box-shadow: 10px;
+    display: grid;
+    grid-template-columns: auto 20rem auto;
+    justify-items: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+li input{
+    height: 4em;
+    width: 2em;
+}
+
+li input:checked + p{
+    text-decoration-line: line-through;
+    color: crimson;
+}
+
+p{
+    font-size: larger;
+}

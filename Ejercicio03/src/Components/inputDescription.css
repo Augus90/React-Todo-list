@@ -1,0 +1,16 @@
+.formDetalle{
+    background: teal;
+    border: 3px solid black;
+    border-radius: 10px;
+    display: flex;
+    padding: 6px;
+    margin-left: 3em;
+    margin-right: 1em;
+    justify-content: space-around;
+}
+
+.formDetalle input{
+    width: 60%;
+    height: 1.5rem;
+    align-self: center;
+}
