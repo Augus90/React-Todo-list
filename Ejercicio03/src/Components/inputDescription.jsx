@@ -17,16 +17,21 @@ export default function InputDescription({Tareas, setTareas}){
     }
 
     return(
-        <div className="formDetalle">
-            <input 
-                type="text" 
-                value={Descripcion} 
-                onChange={e => setDescripcion(e.target.value)}
-                onKeyDown={e => e.key === 'Enter' ? addTarea() : null}
-            />
-            <button onClick={() => addTarea()}>
-                Agregar
-            </button>
+        <div className="form-group row">
+            <div className="col-10">
+                <input 
+                    className="form-control"
+                    type="text" 
+                    value={Descripcion} 
+                    onChange={e => setDescripcion(e.target.value)}
+                    onKeyDown={e => e.key === 'Enter' ? addTarea() : null}
+                />
+            </div>
+            <div className="col-2">
+                <button className="btn btn-primary" onClick={() => addTarea()}>
+                    Agregar
+                </button>
+            </div>
         </div>
     )
 }

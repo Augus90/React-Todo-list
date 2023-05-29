@@ -26,7 +26,7 @@ const borrarTarea = (idABorrar) => {
     <>
       <h2>Lista de tareas</h2>
       <InputDescription Tareas={Tareas} setTareas={setTareas}/>
-      <ul>
+      <ul className=''>
         {Tareas.length === 0 && "No Tienes Tareas Pendientes"}
         {
           Tareas.map((tarea) => (
