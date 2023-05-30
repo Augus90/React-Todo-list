@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import './App.css'
 import InputDescription from './Components/inputDescription';
 import ItemLista from './Components/itemLista';
 
 function App() {
   const [Tareas, setTareas] = useState([]);
+
+  const first = useContext(second)
 
   const completarTarea = (indexTarea, completado) => {
     setTareas(tareaActual => {
