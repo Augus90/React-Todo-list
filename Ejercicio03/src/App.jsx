@@ -1,10 +1,19 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import InputDescription from './Components/inputDescription';
 import ItemLista from './Components/itemLista';
 
 function App() {
-  const [Tareas, setTareas] = useState([]);
+  const [Tareas, setTareas] = useState(() => {
+    const valorGuardado = localStorage.getItem("Tareas")
+    if(valorGuardado == null) return []
+
+    return JSON.parse(valorGuardado)
+  });
+  useEffect(() => {
+    localStorage.setItem("Tareas", JSON.stringify(Tareas));
+  }, [Tareas])
+  
 
   const completarTarea = (indexTarea, completado) => {
     setTareas(tareaActual => {
