@@ -10,7 +10,7 @@ export default function ItemLista({tarea, completarTarea, borrarTarea}){
                 type="checkbox" 
                 name="completed"                
                 defaultChecked={tarea.completed} 
-                onClick={e => completarTarea(tarea, e.target.checked)}
+                onClick={completarTarea(tarea)}
                 />
             <p>{tarea.description}</p>
             <button className="btnDelete" type='button' onClick={() => borrarTarea(tarea)}><img src={can} className='trashCan' alt=""/></button>

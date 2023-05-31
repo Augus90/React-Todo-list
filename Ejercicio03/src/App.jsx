@@ -1,22 +1,19 @@
-import { useContext, useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import InputDescription from './Components/inputDescription';
 import ItemLista from './Components/itemLista';
 
 function App() {
-  const [Tareas, setTareas] = useState([]);
+  const [Tareas, setTareas] = useState( JSON.parse( localStorage.getItem('tareas') ) || []);
+  useEffect(() => {
+    localStorage.setItem('tareas', JSON.stringify(Tareas));
+  }, [Tareas])
 
-  const first = useContext(second)
+  const completarTarea = (idTarea) => {
 
-  const completarTarea = (indexTarea, completado) => {
-    setTareas(tareaActual => {
-        return tareaActual.map(tarea => {
-        if(tarea.id === indexTarea.id){
-            return {...tarea, completado}
-        }
-        return tarea
-        })
-    })
+    setTareas(Tareas.map(tarea => (
+           tarea.id === idTarea.id ? {...tarea, completed: !tarea.completed} : tarea 
+    )))
 }
 
 const borrarTarea = (idABorrar) => {
